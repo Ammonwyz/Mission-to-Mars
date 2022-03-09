@@ -17,7 +17,7 @@
       <!-- Add Jumbotron to Header -->
         <h1>Mission to Mars</h1>
         <!-- Add a button to activate scraping script -->
-        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        <p><a class="btn btn-primary btn-lg" href="http://127.0.0.1:5000/scrape" role="button">Scrape New Data</a></p>
       </div>
       <!-- Add section for Mars News -->
       <div class="row" id="mars-news">
@@ -49,6 +49,20 @@
           </div>
         </div>
       </div>
+        <!-- Section for Hemisphere Image and Title -->
+        <div class="row" id="mars-hemisphere">
+          <div class="col-md-12">
+            <h2>Hemisphere Image</h2>
+            {% for hemisphere in mars.hemispheres %}
+              <div class="col-md-3">
+                <div class = "thumbnail">
+                    <img src="{{hemisphere.img_url}}">
+                    <div style="background:linear-gradient(to bottom, #0c0c0c 15%, #d2ee6f 85%)!important" class="jumbotron text-center">
+                      <h3><b>{{hemisphere.title}}</b></h3>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
     </div>
   </body>
 </html>
